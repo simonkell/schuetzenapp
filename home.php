@@ -16,9 +16,10 @@
     // Überprüfe ob das Registrierungs-Attribut in POST gesetzt wurde
     if(isset($_POST['pwupdate']))    
     {
-        // Speichere Daten aus POST-Übertragung   
-        $username = $_POST['uid']; 
-        $password = $_POST['password'];  
+        // Ermittel die ID des eingeloggten Benutzers
+        $uid = $_SESSION['uid'];
+        // Speichere Daten aus POST-Übertragung
+        $password = $_POST['password'];
         $confirmPassword = $_POST['confirm_password'];
         // Stelle Passwordupdate-Funktionalität bereit
         require_once('dbUser.php');
